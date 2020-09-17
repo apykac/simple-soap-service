@@ -20,7 +20,39 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getSomePersonDateRequest">
+    <xs:element name="deleteCountryRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteCountryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="country" type="common:Country"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addCountryRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="country" type="common:Country"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addCountryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="country" type="common:Country"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getPersonRequest">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="firstName" type="xs:string"/>
@@ -28,7 +60,39 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="getSomePersonDateResponse">
+    <xs:element name="getPersonResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="person" type="common:Person"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deletePersonRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="firstName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deletePersonResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="person" type="common:Person"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addPersonRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="person" type="common:Person"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="addPersonResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="person" type="common:Person"/>

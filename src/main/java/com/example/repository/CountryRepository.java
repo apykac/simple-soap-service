@@ -29,8 +29,18 @@ public class CountryRepository {
         COUNTRIES.put(country.getName(), country);
     }
 
-    public Country findCountry(String name) {
+    public Country getCountry(String name) {
         Assert.notNull(name, "The country's name must not be null");
         return COUNTRIES.get(name);
+    }
+
+    public Country deleteCountry(String name) {
+        Assert.notNull(name, "The country's name must not be null");
+        return COUNTRIES.remove(name);
+    }
+
+    public Country addCountry(Country country) {
+        Assert.notNull(country, "The country must not be null");
+        return COUNTRIES.put(country.getName(), country);
     }
 }

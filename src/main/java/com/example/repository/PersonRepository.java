@@ -46,7 +46,17 @@ public class PersonRepository {
     }
 
     public Person findPerson(String name) {
-        Assert.notNull(name, "The country's name must not be null");
+        Assert.notNull(name, "The person name must not be null");
         return PERSONS.get(name);
+    }
+
+    public Person deletePerson(String name) {
+        Assert.notNull(name, "The person name must not be null");
+        return PERSONS.remove(name);
+    }
+
+    public Person addPerson(Person person) {
+        Assert.notNull(person, "The person must not be null");
+        return PERSONS.put(person.getFirstName(), person);
     }
 }
