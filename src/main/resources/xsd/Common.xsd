@@ -1,0 +1,47 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://home.ru/someWebService/common"
+           targetNamespace="http://home.ru/someWebService/common"
+           elementFormDefault="qualified">
+    <xs:complexType name="Country">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="population" type="xs:int"/>
+            <xs:element name="capital" type="xs:string"/>
+            <xs:element name="currency" type="tns:Currency"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="Currency">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GBP"/>
+            <xs:enumeration value="EUR"/>
+            <xs:enumeration value="PLN"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="Person">
+        <xs:sequence>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="surname" type="xs:string"/>
+            <xs:element name="middleName" type="xs:string"/>
+            <xs:element name="age" type="xs:int"/>
+            <xs:element name="address" type="tns:Address"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Address">
+        <xs:sequence>
+            <xs:element name="town" type="tns:Town"/>
+            <xs:element name="street" type="xs:string"/>
+            <xs:element name="build" type="xs:integer"/>
+            <xs:element name="room" type="xs:integer"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="Town">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Moscow"/>
+            <xs:enumeration value="Krasnogorsk"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

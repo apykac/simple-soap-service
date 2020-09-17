@@ -1,0 +1,38 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:common="http://home.ru/someWebService/common"
+           targetNamespace="http://home.ru/someWebService"
+           elementFormDefault="qualified">
+    <xs:import namespace="http://home.ru/someWebService/common" schemaLocation="Common.xsd"/>
+
+    <xs:element name="getCountryRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getCountryResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="country" type="common:Country"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getSomePersonDateRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="firstName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getSomePersonDateResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="person" type="common:Person"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
